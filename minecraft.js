@@ -68,14 +68,14 @@ gameBoardMatrix.forEach((row, yIndex) => {
 });
 
 const objTools = {
-  axe: { className: ["tree", "leaves"] },
-  pickaxe: { className: "rock" },
-  shovel: { className: ["ground", "grass"] },
+  axe: { classlist: ["tree", "leaves"] },
+  pickaxe: { classlist: "rock" },
+  shovel: { classlist: ["ground", "grass"] },
 };
 
-axeButton.classList.add(objTools.axe.className);
-pickaxeButton.classList.add(objTools.pickaxe.className);
-shovelButton.classList.add(objTools.shovel.className);
+axeButton.classList.add(objTools.axe.classlist);
+pickaxeButton.classList.add(objTools.pickaxe.classlist);
+shovelButton.classList.add(objTools.shovel.classlist);
 
 let myTool = "";
 
@@ -103,8 +103,8 @@ gameBoard.addEventListener("click", (e) => {
     case "axe":
       if (axeButton.className.includes(e.target.className)) {
         e.target.classList = "";
-        break;
       }
+      break;
     case "pickaxe":
       if (pickaxeButton.className.includes(e.target.className)) {
         e.target.classList = "";
