@@ -45,6 +45,9 @@ gameBoardMatrix.forEach((row, yIndex) => {
     const tile = document.createElement("div");
     // add style by id
     switch (currentPositionId) {
+      case 0:
+        tile.classList.add(materialObj.sky.className);
+        break;
       case 1:
         tile.classList.add(materialObj.tree.className);
         break;
@@ -62,9 +65,6 @@ gameBoardMatrix.forEach((row, yIndex) => {
         break;
       case 6:
         tile.classList.add(materialObj.cloud.className);
-        break;
-      case 0:
-        tile.classList.add(materialObj.sky.className);
         break;
     }
     gameBoard.appendChild(tile);
@@ -102,60 +102,42 @@ shovelButton.addEventListener("click", () => {
   myTool = "shovel";
 });
 
-function turnBlue() {
+//functions that turn the tool back to blue -  setTimeout function use them inside
+function axeButtonturnBlue(tool) {
   axeButton.style.background = "blue";
+}
+function pickaxeButtonturnBlue(tool) {
+  pickaxeButton.style.background = "blue";
+}
+function shovelButtonturnBlue(tool) {
+  shovelButton.style.background = "blue";
 }
 
 gameBoard.addEventListener("click", (e) => {
   switch (myTool) {
     case "axe":
       if (axeButton.className.includes(e.target.className)) {
-        e.target.classList = "";
+        e.target.classList = "sky";
       } else {
         axeButton.style.background = "red";
-        setTimeout(turnBlue, 500);
+        setTimeout(axeButtonturnBlue, 500);
       }
       break;
     case "pickaxe":
       if (pickaxeButton.className.includes(e.target.className)) {
-        e.target.classList = "";
+        e.target.classList = "sky";
+      } else {
+        pickaxeButton.style.background = "red";
+        setTimeout(pickaxeButtonturnBlue, 500);
       }
       break;
     case "shovel":
       if (shovelButton.className.includes(e.target.className)) {
-        e.target.classList = "";
+        e.target.classList = "sky";
+      } else {
+        shovelButton.style.background = "red";
+        setTimeout(shovelButtonturnBlue, 500);
       }
       break;
   }
 });
-
-// // gameBoard.addEventListener("click", (e) => {
-// //   if (objTools.axe.className.includes(e.path[0].className)) {
-// //     console.log("yeyy");
-// //   } else {
-// //     console.log("nooo");
-// //   }
-// // });
-
-// // // const tile1 = document.querySelector("tile");
-
-// // gameBoard.addEventListener("click", (e) => {
-// //   e.path[0].classList;
-// // });
-
-// // pickaxe.classList.add(objTools.pickaxe.className);
-// // console.log(pickaxe.className);
-
-// // // console.log(axe.className);
-
-// // // axe.addEventListener("click",)
-
-// // gameBoard.addEventListener("click", (e) => {
-// //   console.dir(e.path[0]);
-// //   if (
-// //     e.path[0].className.value ===
-// //     objTools.pickaxe.)
-// //   ) {
-// //     console.log("hilaaaa");
-// //   }
-// // });

@@ -5,7 +5,7 @@
 @import url("http://fonts.cdnfonts.com/css/minecraft-4");
 
 body {
-  background-image: url("/assets/pictures/minecraft-page-2-image.jfif");
+  background-image: url("/assets/pictures/Best-Minecraft-Server-Hosting-Cover.jpg");
   background-position: initial;
   background-repeat: no-repeat;
   background-size: cover;
@@ -17,13 +17,13 @@ button {
   margin-top: 370px;
   width: 150px;
   height: 50px;
-  background-color: rgb(61, 51, 51);
+  background-color: rgb(255, 249, 249);
   border: 1.5px solid black;
-}
-
-a {
-  text-decoration: none;
   font-family: "Minecraft", sans-serif;
   font-size: 25px;
-  color: black;
+  cursor: pointer;
+}
+a {
+  text-align: center;
+  justify-content: center;
 }
