@@ -1,16 +1,20 @@
-@font-face {
-  font-family: minecraft;
-  src: url("http://fonts.cdnfonts.com/css/minecraft-4");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
+
 @import url("http://fonts.cdnfonts.com/css/minecraft-4");
 
 body {
   background-image: url("/assets/pictures/Best-Minecraft-Server-Hosting-Cover.jpg");
-  background-position: initial;
-  background-repeat: no-repeat;
-  background-size: cover;
   display: flex;
   justify-content: center;
+  font-family: "Minecraft", sans-serif;
+}
+img {
+  width: 100vw;
+  height: 100vh;
 }
 
 button {
@@ -19,11 +23,15 @@ button {
   height: 50px;
   background-color: rgb(255, 249, 249);
   border: 1.5px solid black;
-  font-family: "Minecraft", sans-serif;
   font-size: 25px;
   cursor: pointer;
 }
 a {
   text-align: center;
   justify-content: center;
+}
+.p {
+  text-align: center;
+  justify-content: center;
+  color: rgb(255, 249, 249);
 }

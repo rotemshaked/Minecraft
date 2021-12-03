@@ -113,6 +113,9 @@ function shovelButtonturnBlue(tool) {
   shovelButton.style.background = "blue";
 }
 
+//click on tile and check if the class name of the tile is the same as one of the
+//class list of the tool, if yes than the tile turns to sky, if not, the tool
+//background turns red and than blue.
 gameBoard.addEventListener("click", (e) => {
   switch (myTool) {
     case "axe":
