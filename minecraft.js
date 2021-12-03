@@ -32,6 +32,7 @@ const materialObj = {
   ground: { className: "ground", id: 4 },
   grass: { className: "grass", id: 5 },
   cloud: { className: "cloud", id: 6 },
+  sky: { className: "sky", id: 0 },
 };
 
 // runs on each row
@@ -62,6 +63,9 @@ gameBoardMatrix.forEach((row, yIndex) => {
       case 6:
         tile.classList.add(materialObj.cloud.className);
         break;
+      case 0:
+        tile.classList.add(materialObj.sky.className);
+        break;
     }
     gameBoard.appendChild(tile);
   });
@@ -69,7 +73,7 @@ gameBoardMatrix.forEach((row, yIndex) => {
 
 const objTools = {
   axe: { classlist: ["tree", "leaves"] },
-  pickaxe: { classlist: "rock" },
+  pickaxe: { classlist: ["rock", ""] },
   shovel: { classlist: ["ground", "grass"] },
 };
 
@@ -98,11 +102,18 @@ shovelButton.addEventListener("click", () => {
   myTool = "shovel";
 });
 
+function turnBlue() {
+  axeButton.style.background = "blue";
+}
+
 gameBoard.addEventListener("click", (e) => {
   switch (myTool) {
     case "axe":
       if (axeButton.className.includes(e.target.className)) {
         e.target.classList = "";
+      } else {
+        axeButton.style.background = "red";
+        setTimeout(turnBlue, 500);
       }
       break;
     case "pickaxe":

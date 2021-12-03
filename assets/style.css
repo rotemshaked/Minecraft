@@ -14,7 +14,6 @@ body {
 }
 
 .game-board {
-  background-color: rgb(21, 147, 215);
   width: 70vw;
   height: 100vh;
   display: grid;
@@ -68,6 +67,9 @@ button {
 }
 .cloud {
   background-color: rgb(255, 255, 255);
+}
+.sky {
+  background-color: rgb(21, 147, 215);
 }
 div {
   border: red solid 0.5px;
