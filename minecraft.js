@@ -2,9 +2,9 @@ const gameBoard = document.querySelector(".game-board");
 const axeButton = document.querySelector(".axeButton");
 const pickaxeButton = document.querySelector(".pickaxeButton");
 const shovelButton = document.querySelector(".shovelButton");
+const chosecElement = document.querySelector(".chosecElement");
 
 const gameBoardMatrix = [
-  //18*18
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 6, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -35,15 +35,11 @@ const materialObj = {
   sky: { className: "sky", id: 0 },
 };
 
-// runs on each row
+//create tiles.
 gameBoardMatrix.forEach((row, yIndex) => {
-  // runs on each column
   row.forEach((column, xIndex) => {
-    // save current position id
     const currentPositionId = gameBoardMatrix[yIndex][xIndex];
-    // create a tile
     const tile = document.createElement("div");
-    // add style by id
     switch (currentPositionId) {
       case 0:
         tile.classList.add(materialObj.sky.className);
@@ -77,12 +73,12 @@ const objTools = {
   shovel: { classlist: ["ground", "grass"] },
 };
 
+//add classes to tools
 axeButton.classList.add(objTools.axe.classlist);
 pickaxeButton.classList.add(objTools.pickaxe.classlist);
 shovelButton.classList.add(objTools.shovel.classlist);
 
-let myTool = "";
-
+//fuctions that turns the background of the tool to blue when pressed.
 axeButton.addEventListener("click", () => {
   shovelButton.style.background = "";
   pickaxeButton.style.background = "";
@@ -120,6 +116,8 @@ gameBoard.addEventListener("click", (e) => {
   switch (myTool) {
     case "axe":
       if (axeButton.className.includes(e.target.className)) {
+        chosecElement.classList = "";
+        chosecElement.classList.add(e.target.className);
         e.target.classList = "sky";
       } else {
         axeButton.style.background = "red";
@@ -128,6 +126,8 @@ gameBoard.addEventListener("click", (e) => {
       break;
     case "pickaxe":
       if (pickaxeButton.className.includes(e.target.className)) {
+        chosecElement.classList = "";
+        chosecElement.classList.add(e.target.className);
         e.target.classList = "sky";
       } else {
         pickaxeButton.style.background = "red";
@@ -136,6 +136,8 @@ gameBoard.addEventListener("click", (e) => {
       break;
     case "shovel":
       if (shovelButton.className.includes(e.target.className)) {
+        chosecElement.classList = "";
+        chosecElement.classList.add(e.target.className);
         e.target.classList = "sky";
       } else {
         shovelButton.style.background = "red";

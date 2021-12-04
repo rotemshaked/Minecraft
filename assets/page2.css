@@ -9,7 +9,6 @@ body {
   width: 100vw;
   display: flex;
   justify-content: center;
-  align-items: center;
   background-color: white;
 }
 
@@ -34,16 +33,15 @@ body {
 button {
   width: 60px;
   height: 60px;
-  align-items: center;
-  justify-content: center;
-  border: none;
+  cursor: pointer;
+  border: black solid 0.5px;
 }
 .shovelButton,
 .pickaxeButton,
-.axeButton {
+.axeButton,
+.chosecElement {
   width: 60px;
   height: 60px;
-  cursor: pointer;
 }
 
 .tree {
@@ -71,6 +69,7 @@ button {
 .sky {
   background-color: rgb(21, 147, 215);
 }
+
 div {
   border: red solid 0.5px;
 }
