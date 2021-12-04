@@ -91,36 +91,44 @@ button p {
   background: url("/assets/pictures/pokemon-1.jpg");
   background-size: cover;
   background-position: center;
+  background-color: rgb(21, 147, 215);
 }
 .pokemon-2 {
   background: url("/assets/pictures/pokemon-2.jpg");
   background-size: cover;
   background-position: center;
+  background-color: rgb(21, 147, 215);
 }
 .pokemon-3 {
   background: url("/assets/pictures/pokemon-3.png");
   background-size: cover;
   background-position: center;
+  background-color: rgb(21, 147, 215);
 }
 .pokemon-4 {
   background: url("/assets/pictures/pokemon-4.jpg");
   background-size: cover;
   background-position: center;
+  background-color: rgb(21, 147, 215);
 }
 .pokemon-5 {
   background: url("/assets/pictures/pokemon-5.jfif");
   background-size: cover;
   background-position: center;
+  background-color: rgb(21, 147, 215);
 }
 .pokemon-6 {
   background: url("/assets/pictures/pokemon-6.png");
   background-size: cover;
   background-position: center;
+  background-color: rgb(21, 147, 215);
 }
+
 .pokemon-7 {
   background: url("/assets/pictures/pokemon-7.jpg");
   background-size: cover;
   background-position: center;
+  background-color: rgb(21, 147, 215);
 }
 
 .toolsUserChoose {
