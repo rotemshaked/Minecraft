@@ -2,7 +2,7 @@ const gameBoard = document.querySelector(".game-board");
 const axeButton = document.querySelector(".axeButton");
 const pickaxeButton = document.querySelector(".pickaxeButton");
 const shovelButton = document.querySelector(".shovelButton");
-const chosecElement = document.querySelector(".chosecElement");
+const chosenElement = document.querySelector(".chosenElement");
 
 const gameBoardMatrix = [
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -10,29 +10,31 @@ const gameBoardMatrix = [
   [0, 0, 0, 0, 0, 6, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 6, 6, 6, 6, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 6, 6, 6, 6, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
-  [0, 0, 2, 2, 0, 0, 3, 3, 3, 0, 0, 0, 0, 1, 0, 0, 0, 0],
-  [0, 0, 2, 2, 0, 0, 3, 3, 3, 0, 0, 0, 0, 1, 0, 0, 0, 0],
-  [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+  [8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+  [8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+  [8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+  [8, 8, 8, 8, 0, 0, 3, 3, 3, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+  [8, 8, 8, 8, 0, 0, 3, 3, 3, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+  [7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7],
   [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
   [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
   [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
 ];
 
 const materialObj = {
+  sky: { className: "sky", id: 0 },
   tree: { className: "tree", id: 1 },
   leaves: { className: "leaves", id: 2 },
   rock: { className: "rock", id: 3 },
   ground: { className: "ground", id: 4 },
   grass: { className: "grass", id: 5 },
   cloud: { className: "cloud", id: 6 },
-  sky: { className: "sky", id: 0 },
+  grassGround: { className: "grassGround", id: 7 },
+  redBlock: { className: "redBlock", id: 8 },
 };
 
 //create tiles.
@@ -62,6 +64,12 @@ gameBoardMatrix.forEach((row, yIndex) => {
       case 6:
         tile.classList.add(materialObj.cloud.className);
         break;
+      case 7:
+        tile.classList.add(materialObj.grassGround.className);
+        break;
+      case 8:
+        tile.classList.add(materialObj.redBlock.className);
+        break;
     }
     gameBoard.appendChild(tile);
   });
@@ -69,8 +77,8 @@ gameBoardMatrix.forEach((row, yIndex) => {
 
 const objTools = {
   axe: { classlist: ["tree", "leaves"] },
-  pickaxe: { classlist: ["rock", ""] },
-  shovel: { classlist: ["ground", "grass"] },
+  pickaxe: { classlist: ["rock", "redBlock"] },
+  shovel: { classlist: ["ground", "grass", "grassGround"] },
 };
 
 //add classes to tools
@@ -78,6 +86,7 @@ axeButton.classList.add(objTools.axe.classlist);
 pickaxeButton.classList.add(objTools.pickaxe.classlist);
 shovelButton.classList.add(objTools.shovel.classlist);
 
+let myTool = "";
 //fuctions that turns the background of the tool to blue when pressed.
 axeButton.addEventListener("click", () => {
   shovelButton.style.background = "";
@@ -116,8 +125,8 @@ gameBoard.addEventListener("click", (e) => {
   switch (myTool) {
     case "axe":
       if (axeButton.className.includes(e.target.className)) {
-        chosecElement.classList = "";
-        chosecElement.classList.add(e.target.className);
+        chosenElement.classList = "";
+        console.log((chosenElement.classList = e.target.classList));
         e.target.classList = "sky";
       } else {
         axeButton.style.background = "red";
@@ -126,8 +135,8 @@ gameBoard.addEventListener("click", (e) => {
       break;
     case "pickaxe":
       if (pickaxeButton.className.includes(e.target.className)) {
-        chosecElement.classList = "";
-        chosecElement.classList.add(e.target.className);
+        chosenElement.classList = "";
+        chosenElement.classList.add(e.target.className);
         e.target.classList = "sky";
       } else {
         pickaxeButton.style.background = "red";
@@ -136,8 +145,8 @@ gameBoard.addEventListener("click", (e) => {
       break;
     case "shovel":
       if (shovelButton.className.includes(e.target.className)) {
-        chosecElement.classList = "";
-        chosecElement.classList.add(e.target.className);
+        chosenElement.classList = "";
+        chosenElement.classList.add(e.target.className);
         e.target.classList = "sky";
       } else {
         shovelButton.style.background = "red";

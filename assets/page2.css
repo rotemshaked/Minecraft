@@ -4,6 +4,8 @@
   box-sizing: border-box;
 }
 
+@import url("http://fonts.cdnfonts.com/css/minecraft-4");
+
 body {
   height: 100vh;
   width: 100vw;
@@ -13,7 +15,7 @@ body {
 }
 
 .game-board {
-  width: 70vw;
+  width: 60vw;
   height: 100vh;
   display: grid;
   grid-template-columns: repeat(18, 1fr);
@@ -32,18 +34,29 @@ body {
 }
 button {
   width: 60px;
-  height: 60px;
+  height: 15%;
   cursor: pointer;
-  border: black solid 0.5px;
+  border: none;
+  background-color: black;
 }
 .shovelButton,
 .pickaxeButton,
-.axeButton,
-.chosecElement {
+.axeButton {
   width: 60px;
   height: 60px;
+  border: 0.5px whitesmoke solid;
 }
-
+.chosenElement {
+  height: 8vh;
+  width: 4vw;
+  border: 0.5px whitesmoke solid;
+  background-position: center;
+  background-size: cover;
+}
+button p {
+  font-family: "Minecraft", sans-serif;
+  color: whitesmoke;
+}
 .tree {
   background: url("/assets/pictures/big/treeBrown.jpeg");
 }
@@ -69,7 +82,9 @@ button {
 .sky {
   background-color: rgb(21, 147, 215);
 }
-
-div {
-  border: red solid 0.5px;
+.grassGround {
+  background: url("/assets/pictures/big/grassWithGround.jpeg");
+}
+.redBlock {
+  background: url("/assets/pictures/big/Red-Brick-Block-300x300.png");
 }
