@@ -148,7 +148,9 @@ button p {
 .userchoice4,
 .userchoice5,
 .userchoice6,
-.userchoice7 {
+.userchoice7,
+.userchoice8 {
+  font-family: "Minecraft", sans-serif;
   width: 60px;
   height: 60px;
   border: 2px black dotted;

@@ -180,9 +180,9 @@ gameBoard.addEventListener("click", (e) => {
       break;
     case "shovel":
       if (shovelButton.className.includes(e.target.className)) {
-        userchoice3.classList.add(e.target.className);
+        e.target.classList = "";
         e.target.classList = pickPokemon();
-        console.log(e.target.classList);
+        userchoice3.classList.add(e.target.className);
       } else {
         shovelButton.style.background = "red";
         setTimeout(shovelButtonturnBlue, 500);
