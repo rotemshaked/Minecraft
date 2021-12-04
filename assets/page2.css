@@ -87,6 +87,41 @@ button p {
 .redBlock {
   background: url("/assets/pictures/big/Red-Brick-Block-300x300.png");
 }
+.pokemon-1 {
+  background: url("/assets/pictures/pokemon-1.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.pokemon-2 {
+  background: url("/assets/pictures/pokemon-2.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.pokemon-3 {
+  background: url("/assets/pictures/pokemon-3.png");
+  background-size: cover;
+  background-position: center;
+}
+.pokemon-4 {
+  background: url("/assets/pictures/pokemon-4.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.pokemon-5 {
+  background: url("/assets/pictures/pokemon-5.jfif");
+  background-size: cover;
+  background-position: center;
+}
+.pokemon-6 {
+  background: url("/assets/pictures/pokemon-6.png");
+  background-size: cover;
+  background-position: center;
+}
+.pokemon-7 {
+  background: url("/assets/pictures/pokemon-7.jpg");
+  background-size: cover;
+  background-position: center;
+}
 
 .toolsUserChoose {
   width: 78.5vw;
@@ -102,7 +137,10 @@ button p {
 .userchoice1,
 .userchoice2,
 .userchoice3,
-.userchoice4 {
+.userchoice4,
+.userchoice5,
+.userchoice6,
+.userchoice7 {
   width: 60px;
   height: 60px;
   border: 2px black dotted;

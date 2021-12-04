@@ -3,9 +3,15 @@ const axeButton = document.querySelector(".axeButton");
 const pickaxeButton = document.querySelector(".pickaxeButton");
 const shovelButton = document.querySelector(".shovelButton");
 const swordButton = document.querySelector(".swordButton");
+const userchoice1 = document.querySelector(".userchoice1");
+const userchoice2 = document.querySelector(".userchoice2");
+const userchoice3 = document.querySelector(".userchoice3");
+const userchoice4 = document.querySelector(".userchoice4");
+const userchoice5 = document.querySelector(".userchoice5");
+const userchoice6 = document.querySelector(".userchoice6");
+const userchoice7 = document.querySelector(".userchoice7");
 
 const gameBoardMatrix = [
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 6, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 6, 6, 6, 6, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -23,6 +29,7 @@ const gameBoardMatrix = [
   [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
   [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
   [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+  [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
 ];
 
 const materialObj = {
@@ -37,6 +44,28 @@ const materialObj = {
   redBlock: { className: "redBlock", id: 8 },
 };
 
+const objTools = {
+  axe: { classlist: ["tree", "leaves"] },
+  pickaxe: { classlist: ["rock", "redBlock"] },
+  shovel: { classlist: ["ground", "grass", "grassGround"] },
+  sword: { classlist: ["tree", "leaves", "rock", "redBlock"] },
+};
+
+const pickPokemonobj = [
+  "pokemon-1",
+  "pokemon-2",
+  "pokemon-3",
+  "pokemon-4",
+  "pokemon-5",
+  "pokemon-6",
+  "pokemon-7",
+];
+
+pickPokemon = () => {
+  let pokemon = pickPokemonobj[Math.floor(Math.random() * 7)];
+  return pokemon;
+};
+console.log(pickPokemon());
 //create tiles.
 gameBoardMatrix.forEach((row, yIndex) => {
   row.forEach((column, xIndex) => {
@@ -75,13 +104,6 @@ gameBoardMatrix.forEach((row, yIndex) => {
   });
 });
 
-const objTools = {
-  axe: { classlist: ["tree", "leaves"] },
-  pickaxe: { classlist: ["rock", "redBlock"] },
-  shovel: { classlist: ["ground", "grass", "grassGround"] },
-  sword: { classlist: ["tree", "leaves", "rock", "redBlock"] },
-};
-
 //add classes to tools
 axeButton.classList.add(objTools.axe.classlist);
 pickaxeButton.classList.add(objTools.pickaxe.classlist);
@@ -102,7 +124,6 @@ pickaxeButton.addEventListener("click", () => {
   pickaxeButton.style.background = "blue";
   axeButton.style.background = "";
   swordButton.style.background = "";
-
   myTool = "pickaxe";
 });
 shovelButton.addEventListener("click", () => {
@@ -141,6 +162,7 @@ gameBoard.addEventListener("click", (e) => {
   switch (myTool) {
     case "axe":
       if (axeButton.className.includes(e.target.className)) {
+        userchoice1.classList.add(e.target.className);
         e.target.classList = "sky";
       } else {
         axeButton.style.background = "red";
@@ -149,6 +171,7 @@ gameBoard.addEventListener("click", (e) => {
       break;
     case "pickaxe":
       if (pickaxeButton.className.includes(e.target.className)) {
+        userchoice2.classList.add(e.target.className);
         e.target.classList = "sky";
       } else {
         pickaxeButton.style.background = "red";
@@ -157,7 +180,8 @@ gameBoard.addEventListener("click", (e) => {
       break;
     case "shovel":
       if (shovelButton.className.includes(e.target.className)) {
-        e.target.classList = "sky";
+        userchoice3.classList.add(e.target.className);
+        e.target.classList = pickPokemon();
       } else {
         shovelButton.style.background = "red";
         setTimeout(shovelButtonturnBlue, 500);
@@ -166,6 +190,7 @@ gameBoard.addEventListener("click", (e) => {
       break;
     case "sword":
       if (swordButton.className.includes(e.target.className)) {
+        userchoice4.classList.add(e.target.className);
         e.target.classList = "sky";
       } else {
         swordButton.style.background = "red";
