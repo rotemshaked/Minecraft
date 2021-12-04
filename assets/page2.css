@@ -12,13 +12,6 @@ body {
   background-color: white;
   position: relative;
 }
-.toolsUserChoose {
-  width: 78.5vw;
-  height: 13vh;
-  margin-left: 8.5vw;
-  background-color: blanchedalmond;
-  position: absolute;
-}
 
 .game-board {
   margin-top: 15vh;
@@ -93,4 +86,26 @@ button p {
 }
 .redBlock {
   background: url("/assets/pictures/big/Red-Brick-Block-300x300.png");
+}
+
+.toolsUserChoose {
+  width: 78.5vw;
+  height: 13vh;
+  margin-left: 8.5vw;
+  background-color: blanchedalmond;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userchoice1,
+.userchoice2,
+.userchoice3,
+.userchoice4 {
+  width: 60px;
+  height: 60px;
+  border: 2px black dotted;
+  cursor: pointer;
+  margin: 2%;
 }
