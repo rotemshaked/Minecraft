@@ -2,7 +2,7 @@ const gameBoard = document.querySelector(".game-board");
 const axeButton = document.querySelector(".axeButton");
 const pickaxeButton = document.querySelector(".pickaxeButton");
 const shovelButton = document.querySelector(".shovelButton");
-const chosenElement = document.querySelector(".chosenElement");
+const swordButton = document.querySelector(".swordButton");
 
 const gameBoardMatrix = [
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -79,12 +79,14 @@ const objTools = {
   axe: { classlist: ["tree", "leaves"] },
   pickaxe: { classlist: ["rock", "redBlock"] },
   shovel: { classlist: ["ground", "grass", "grassGround"] },
+  sword: { classlist: ["tree", "leaves", "rock", "redBlock"] },
 };
 
 //add classes to tools
 axeButton.classList.add(objTools.axe.classlist);
 pickaxeButton.classList.add(objTools.pickaxe.classlist);
 shovelButton.classList.add(objTools.shovel.classlist);
+swordButton.classList.add(objTools.sword.classlist);
 
 let myTool = "";
 //fuctions that turns the background of the tool to blue when pressed.
@@ -92,19 +94,30 @@ axeButton.addEventListener("click", () => {
   shovelButton.style.background = "";
   pickaxeButton.style.background = "";
   axeButton.style.background = "blue";
+  swordButton.style.background = "";
   myTool = "axe";
 });
 pickaxeButton.addEventListener("click", () => {
   shovelButton.style.background = "";
   pickaxeButton.style.background = "blue";
   axeButton.style.background = "";
+  swordButton.style.background = "";
+
   myTool = "pickaxe";
 });
 shovelButton.addEventListener("click", () => {
   shovelButton.style.background = "blue";
   pickaxeButton.style.background = "";
   axeButton.style.background = "";
+  swordButton.style.background = "";
   myTool = "shovel";
+});
+swordButton.addEventListener("click", () => {
+  shovelButton.style.background = "";
+  pickaxeButton.style.background = "";
+  axeButton.style.background = "";
+  swordButton.style.background = "blue";
+  myTool = "sword";
 });
 
 //functions that turn the tool back to blue -  setTimeout function use them inside
@@ -117,6 +130,9 @@ function pickaxeButtonturnBlue(tool) {
 function shovelButtonturnBlue(tool) {
   shovelButton.style.background = "blue";
 }
+function swordlButtonturnBlue(tool) {
+  swordButton.style.background = "blue";
+}
 
 //click on tile and check if the class name of the tile is the same as one of the
 //class list of the tool, if yes than the tile turns to sky, if not, the tool
@@ -125,8 +141,6 @@ gameBoard.addEventListener("click", (e) => {
   switch (myTool) {
     case "axe":
       if (axeButton.className.includes(e.target.className)) {
-        chosenElement.classList = "";
-        console.log((chosenElement.classList = e.target.classList));
         e.target.classList = "sky";
       } else {
         axeButton.style.background = "red";
@@ -135,8 +149,6 @@ gameBoard.addEventListener("click", (e) => {
       break;
     case "pickaxe":
       if (pickaxeButton.className.includes(e.target.className)) {
-        chosenElement.classList = "";
-        chosenElement.classList.add(e.target.className);
         e.target.classList = "sky";
       } else {
         pickaxeButton.style.background = "red";
@@ -145,12 +157,19 @@ gameBoard.addEventListener("click", (e) => {
       break;
     case "shovel":
       if (shovelButton.className.includes(e.target.className)) {
-        chosenElement.classList = "";
-        chosenElement.classList.add(e.target.className);
         e.target.classList = "sky";
       } else {
         shovelButton.style.background = "red";
         setTimeout(shovelButtonturnBlue, 500);
+      }
+      break;
+      break;
+    case "sword":
+      if (swordButton.className.includes(e.target.className)) {
+        e.target.classList = "sky";
+      } else {
+        swordButton.style.background = "red";
+        setTimeout(swordlButtonturnBlue, 500);
       }
       break;
   }

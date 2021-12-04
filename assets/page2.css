@@ -7,55 +7,61 @@
 @import url("http://fonts.cdnfonts.com/css/minecraft-4");
 
 body {
-  height: 100vh;
-  width: 100vw;
   display: flex;
   justify-content: center;
   background-color: white;
+  position: relative;
+}
+.toolsUserChoose {
+  width: 78.5vw;
+  height: 13vh;
+  margin-left: 8.5vw;
+  background-color: blanchedalmond;
+  position: absolute;
 }
 
 .game-board {
-  width: 60vw;
-  height: 100vh;
+  margin-top: 15vh;
+  width: 70vw;
+  height: 85vh;
   display: grid;
   grid-template-columns: repeat(18, 1fr);
   grid-template-rows: repeat(18, 1fr);
+  position: absolute;
 }
 
 .tool-box {
-  margin-left: 50px;
+  margin-top: 15vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 10vw;
-  height: 100vh;
-  background-color: black;
+  width: 7vw;
+  height: 85vh;
+  background-color: blanchedalmond;
+  position: absolute;
+  margin-left: 80vw;
 }
 button {
   width: 60px;
   height: 15%;
   cursor: pointer;
   border: none;
-  background-color: black;
+  background-color: blanchedalmond;
 }
+
+.swordButton,
 .shovelButton,
 .pickaxeButton,
 .axeButton {
   width: 60px;
   height: 60px;
-  border: 0.5px whitesmoke solid;
+  border: 2px black dotted;
 }
-.chosenElement {
-  height: 8vh;
-  width: 4vw;
-  border: 0.5px whitesmoke solid;
-  background-position: center;
-  background-size: cover;
-}
+
 button p {
   font-family: "Minecraft", sans-serif;
-  color: whitesmoke;
+  color: black;
 }
 .tree {
   background: url("/assets/pictures/big/treeBrown.jpeg");
