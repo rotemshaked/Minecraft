@@ -154,7 +154,9 @@ button p {
 .userchoice3 p,
 .userchoice4 p,
 .userchoice5 p,
-.userchoice6 p,
-.userchoice7 p {
+.userchoice6 p {
   color: blanchedalmond;
+}
+.userchoice7 p {
+  color: black;
 }

@@ -10,13 +10,13 @@ const userchoice3 = document.querySelector(".userchoice3 p");
 const userchoice4 = document.querySelector(".userchoice4 p");
 const userchoice5 = document.querySelector(".userchoice5 p");
 const userchoice6 = document.querySelector(".userchoice6 p");
-const userchoice12 = document.querySelector(".userchoice1");
-const userchoice22 = document.querySelector(".userchoice2");
-const userchoice32 = document.querySelector(".userchoice3");
-const userchoice42 = document.querySelector(".userchoice4");
-const userchoice52 = document.querySelector(".userchoice5");
-const userchoice62 = document.querySelector(".userchoice6");
-const userchoice72 = document.querySelector(".userchoice7");
+const userchoice1Button = document.querySelector(".userchoice1");
+const userchoice2Button = document.querySelector(".userchoice2");
+const userchoice3Button = document.querySelector(".userchoice3");
+const userchoice4Button = document.querySelector(".userchoice4");
+const userchoice5Button = document.querySelector(".userchoice5");
+const userchoice6Button = document.querySelector(".userchoice6");
+const userchoice7Button = document.querySelector(".userchoice7");
 
 const gameBoardMatrix = [
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -172,16 +172,16 @@ userchoice6.addEventListener("click", () => {
 });
 
 //functions that turn the tool back to blue -  setTimeout function use them inside.
-function axeButtonturnBlue(tool) {
+function axeButtonturnBlue() {
   axeButton.style.background = "blue";
 }
-function pickaxeButtonturnBlue(tool) {
+function pickaxeButtonturnBlue() {
   pickaxeButton.style.background = "blue";
 }
-function shovelButtonturnBlue(tool) {
+function shovelButtonturnBlue() {
   shovelButton.style.background = "blue";
 }
-function swordlButtonturnBlue(tool) {
+function swordlButtonturnBlue() {
   swordButton.style.background = "blue";
 }
 
@@ -201,6 +201,25 @@ pickPokemon = () => {
   let pokemon = pickPokemonobj[Math.floor(Math.random() * 7)];
   return pokemon;
 };
+
+function userchoice1ButtonTurnBlue() {
+  userchoice1Button.style.borderColor = "blue";
+}
+function userchoice2ButtonTurnBlue() {
+  userchoice2Button.style.borderColor = "blue";
+}
+function userchoice3ButtonTurnBlue() {
+  userchoice3Button.style.borderColor = "blue";
+}
+function userchoice4ButtonTurnBlue() {
+  userchoice4Button.style.borderColor = "blue";
+}
+function userchoice5ButtonTurnBlue() {
+  userchoice5Button.style.borderColor = "blue";
+}
+function userchoice6ButtonTurnBlue() {
+  userchoice6Button.style.borderColor = "blue";
+}
 
 //click on tile and check if the class name of the tile is the same as one of the
 //class list of the tool, if yes than the tile turns to sky, if not, the tool
@@ -244,10 +263,24 @@ gameBoard.addEventListener("click", (e) => {
       }
       break;
     case "shovel":
-      if (shovelButton.className.includes(e.target.className)) {
+      if (
+        shovelButton.className.includes(e.target.className) &&
+        e.target.className === "ground"
+      ) {
         e.target.classList = "";
         userchoice4.innerText = +userchoice4.innerText + 1;
         e.target.classList = pickPokemon();
+        userchoice7Button.classlist = e.target.classlist;
+        console.log(userchoice7Button.classlist);
+      } else if (
+        shovelButton.className.includes(e.target.className) &&
+        e.target.className === "grass"
+      ) {
+        e.target.classList = "";
+        userchoice5.innerText = +userchoice5.innerText + 1;
+        e.target.classList = pickPokemon();
+        userchoice7Button.classlist = e.target.classlist;
+        console.log(userchoice7Button.classlist);
       } else {
         shovelButton.style.background = "red";
         setTimeout(shovelButtonturnBlue, 500);
@@ -284,30 +317,41 @@ gameBoard.addEventListener("click", (e) => {
       }
       break;
     case "userchoice1":
+      // userchoice1Button.style.borderColor = "blue";
       if (userchoice1.innerText > 0) {
         userchoice1.innerText = +userchoice1.innerText - 1;
+        e.target.className = "leaves";
+        break;
       }
     case "userchoice2":
       if (userchoice2.innerText > 0) {
         userchoice2.innerText = +userchoice2.innerText - 1;
+        e.target.className = "tree";
+        break;
       }
     case "userchoice3":
       if (userchoice3.innerText > 0) {
         userchoice3.innerText = +userchoice3.innerText - 1;
+        break;
       }
     case "userchoice4":
       if (userchoice4.innerText > 0) {
         userchoice4.innerText = +userchoice4.innerText - 1;
+        e.target.className = "rock";
+        break;
       }
     case "userchoice5":
       if (userchoice5.innerText > 0) {
         userchoice5.innerText = +userchoice5.innerText - 1;
+        e.target.className = "ground";
+        break;
       }
     case "userchoice6":
       if (userchoice6.innerText > 0) {
         userchoice6.innerText = +userchoice6.innerText - 1;
+        e.target.className = "grass";
+        break;
       }
   }
 });
-
-console.log(userchoice12);
+console.log(userchoice1Button.classname);
