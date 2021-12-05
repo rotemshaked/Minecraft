@@ -339,31 +339,29 @@ gameBoard.addEventListener("click", (e) => {
     case "userchoice3":
       if (userchoice3.innerText > 0) {
         userchoice3.innerText = +userchoice3.innerText - 1;
+        e.target.className = "rock";
       }
       break;
     case "userchoice4":
       if (userchoice4.innerText > 0) {
         userchoice4.innerText = +userchoice4.innerText - 1;
-        e.target.className = "rock";
+        e.target.className = "ground";
       }
       break;
     case "userchoice5":
       if (userchoice5.innerText > 0) {
         userchoice5.innerText = +userchoice5.innerText - 1;
-        e.target.className = "ground";
+        e.target.className = "grass";
       }
       break;
     case "userchoice6":
       if (userchoice6.innerText > 0) {
         userchoice6.innerText = +userchoice6.innerText - 1;
-        e.target.className = "grass";
+        e.target.className = "redBlock";
       }
       break;
   }
 });
-
-// userchoice7Button.classList = pickPokemon();
-// console.log(userchoice7Button.classList);
 
 reload.addEventListener("click", () => {
   location.reload();

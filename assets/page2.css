@@ -157,6 +157,14 @@ button p {
 .userchoice6 p {
   color: blanchedalmond;
 }
+.userchoice7 {
+  /* background-image: url("/assets/pictures/pokemon-1.jpg"); */
+  width: 60px;
+  height: 60px;
+  background-size: cover;
+  background-position: center;
+}
+
 .userchoice7 p {
   font-family: "Minecraft", sans-serif;
   color: black;
