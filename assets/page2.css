@@ -23,7 +23,7 @@ body {
   position: absolute;
 }
 
-.tool-box {
+.toolBox {
   margin-top: 15vh;
   display: flex;
   flex-direction: column;
@@ -72,63 +72,54 @@ button p {
   background: url("/assets/pictures/big/ground.jpeg");
 }
 
-.grass {
-  background: url("/assets/pictures/big/treeGreen.jpeg");
-}
 .cloud {
   background-color: rgb(255, 255, 255);
 }
 .sky {
   background-color: rgb(21, 147, 215);
 }
-.grassGround {
+.grass {
   background: url("/assets/pictures/big/grassWithGround.jpeg");
 }
 .redBlock {
   background: url("/assets/pictures/big/Red-Brick-Block-300x300.png");
 }
+
 .pokemon-1 {
   background: url("/assets/pictures/pokemon-1.jpg");
   background-size: cover;
   background-position: center;
-  background-color: rgb(21, 147, 215);
 }
 .pokemon-2 {
   background: url("/assets/pictures/pokemon-2.jpg");
   background-size: cover;
   background-position: center;
-  background-color: rgb(21, 147, 215);
 }
 .pokemon-3 {
   background: url("/assets/pictures/pokemon-3.png");
   background-size: cover;
   background-position: center;
-  background-color: rgb(21, 147, 215);
 }
 .pokemon-4 {
   background: url("/assets/pictures/pokemon-4.jpg");
   background-size: cover;
   background-position: center;
-  background-color: rgb(21, 147, 215);
 }
 .pokemon-5 {
   background: url("/assets/pictures/pokemon-5.jfif");
   background-size: cover;
   background-position: center;
-  background-color: rgb(21, 147, 215);
 }
 .pokemon-6 {
   background: url("/assets/pictures/pokemon-6.png");
   background-size: cover;
   background-position: center;
-  background-color: rgb(21, 147, 215);
 }
 
 .pokemon-7 {
   background: url("/assets/pictures/pokemon-7.jpg");
   background-size: cover;
   background-position: center;
-  background-color: rgb(21, 147, 215);
 }
 
 .toolsUserChoose {
@@ -148,12 +139,22 @@ button p {
 .userchoice4,
 .userchoice5,
 .userchoice6,
-.userchoice7,
-.userchoice8 {
+.userchoice7 {
   font-family: "Minecraft", sans-serif;
   width: 60px;
   height: 60px;
-  border: 2px black dotted;
+  border: 2px black solid;
   cursor: pointer;
   margin: 2%;
+  color: blanchedalmond;
+}
+
+.userchoice1 p,
+.userchoice2 p,
+.userchoice3 p,
+.userchoice4 p,
+.userchoice5 p,
+.userchoice6 p,
+.userchoice7 p {
+  color: blanchedalmond;
 }

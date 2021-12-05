@@ -3,29 +3,36 @@ const axeButton = document.querySelector(".axeButton");
 const pickaxeButton = document.querySelector(".pickaxeButton");
 const shovelButton = document.querySelector(".shovelButton");
 const swordButton = document.querySelector(".swordButton");
-const userchoice1 = document.querySelector(".userchoice1");
-const userchoice2 = document.querySelector(".userchoice2");
-const userchoice3 = document.querySelector(".userchoice3");
-const userchoice4 = document.querySelector(".userchoice4");
-const userchoice5 = document.querySelector(".userchoice5");
-const userchoice6 = document.querySelector(".userchoice6");
-const userchoice7 = document.querySelector(".userchoice7");
+const toolBox = document.querySelector(".toolBox");
+const userchoice1 = document.querySelector(".userchoice1 p");
+const userchoice2 = document.querySelector(".userchoice2 p");
+const userchoice3 = document.querySelector(".userchoice3 p");
+const userchoice4 = document.querySelector(".userchoice4 p");
+const userchoice5 = document.querySelector(".userchoice5 p");
+const userchoice6 = document.querySelector(".userchoice6 p");
+const userchoice12 = document.querySelector(".userchoice1");
+const userchoice22 = document.querySelector(".userchoice2");
+const userchoice32 = document.querySelector(".userchoice3");
+const userchoice42 = document.querySelector(".userchoice4");
+const userchoice52 = document.querySelector(".userchoice5");
+const userchoice62 = document.querySelector(".userchoice6");
+const userchoice72 = document.querySelector(".userchoice7");
 
 const gameBoardMatrix = [
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 6, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 6, 6, 6, 6, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 6, 6, 6, 6, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 5, 5, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 5, 5, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 0, 0, 0],
-  [8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
-  [8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
-  [8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
-  [8, 8, 8, 8, 0, 0, 3, 3, 3, 0, 0, 0, 0, 1, 0, 0, 0, 0],
-  [8, 8, 8, 8, 0, 0, 3, 3, 3, 0, 0, 0, 0, 1, 0, 0, 0, 0],
-  [7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7],
+  [7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+  [7, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+  [7, 7, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+  [7, 7, 7, 7, 0, 0, 3, 3, 3, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+  [7, 7, 7, 7, 0, 0, 3, 3, 3, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+  [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6],
   [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
   [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
   [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
@@ -38,34 +45,11 @@ const materialObj = {
   leaves: { className: "leaves", id: 2 },
   rock: { className: "rock", id: 3 },
   ground: { className: "ground", id: 4 },
-  grass: { className: "grass", id: 5 },
-  cloud: { className: "cloud", id: 6 },
-  grassGround: { className: "grassGround", id: 7 },
-  redBlock: { className: "redBlock", id: 8 },
+  cloud: { className: "cloud", id: 5 },
+  grass: { className: "grass", id: 6 },
+  redBlock: { className: "redBlock", id: 7 },
 };
 
-const objTools = {
-  axe: { classlist: ["tree", "leaves"] },
-  pickaxe: { classlist: ["rock", "redBlock"] },
-  shovel: { classlist: ["ground", "grass", "grassGround"] },
-  sword: { classlist: ["tree", "leaves", "rock", "redBlock"] },
-};
-
-const pickPokemonobj = [
-  "pokemon-1",
-  "pokemon-2",
-  "pokemon-3",
-  "pokemon-4",
-  "pokemon-5",
-  "pokemon-6",
-  "pokemon-7",
-];
-
-pickPokemon = () => {
-  let pokemon = pickPokemonobj[Math.floor(Math.random() * 7)];
-  return pokemon;
-};
-console.log(pickPokemon());
 //create tiles.
 gameBoardMatrix.forEach((row, yIndex) => {
   row.forEach((column, xIndex) => {
@@ -88,21 +72,25 @@ gameBoardMatrix.forEach((row, yIndex) => {
         tile.classList.add(materialObj.ground.className);
         break;
       case 5:
-        tile.classList.add(materialObj.grass.className);
-        break;
-      case 6:
         tile.classList.add(materialObj.cloud.className);
         break;
-      case 7:
-        tile.classList.add(materialObj.grassGround.className);
+      case 6:
+        tile.classList.add(materialObj.grass.className);
         break;
-      case 8:
+      case 7:
         tile.classList.add(materialObj.redBlock.className);
         break;
     }
     gameBoard.appendChild(tile);
   });
 });
+
+const objTools = {
+  axe: { classlist: ["tree", "leaves"] },
+  pickaxe: { classlist: ["rock", "redBlock"] },
+  shovel: { classlist: ["ground", "grass"] },
+  sword: { classlist: ["tree", "leaves", "rock", "redBlock"] },
+};
 
 //add classes to tools
 axeButton.classList.add(objTools.axe.classlist);
@@ -140,8 +128,50 @@ swordButton.addEventListener("click", () => {
   swordButton.style.background = "blue";
   myTool = "sword";
 });
+userchoice1.addEventListener("click", () => {
+  shovelButton.style.background = "";
+  pickaxeButton.style.background = "";
+  axeButton.style.background = "";
+  swordButton.style.background = "";
+  myTool = "userchoice1";
+});
+userchoice2.addEventListener("click", () => {
+  shovelButton.style.background = "";
+  pickaxeButton.style.background = "";
+  axeButton.style.background = "";
+  swordButton.style.background = "";
+  myTool = "userchoice2";
+});
+userchoice3.addEventListener("click", () => {
+  shovelButton.style.background = "";
+  pickaxeButton.style.background = "";
+  axeButton.style.background = "";
+  swordButton.style.background = "";
+  myTool = "userchoice3";
+});
+userchoice4.addEventListener("click", () => {
+  shovelButton.style.background = "";
+  pickaxeButton.style.background = "";
+  axeButton.style.background = "";
+  swordButton.style.background = "";
+  myTool = "userchoice4";
+});
+userchoice5.addEventListener("click", () => {
+  shovelButton.style.background = "";
+  pickaxeButton.style.background = "";
+  axeButton.style.background = "";
+  swordButton.style.background = "";
+  myTool = "userchoice5";
+});
+userchoice6.addEventListener("click", () => {
+  shovelButton.style.background = "";
+  pickaxeButton.style.background = "";
+  axeButton.style.background = "";
+  swordButton.style.background = "";
+  myTool = "userchoice6";
+});
 
-//functions that turn the tool back to blue -  setTimeout function use them inside
+//functions that turn the tool back to blue -  setTimeout function use them inside.
 function axeButtonturnBlue(tool) {
   axeButton.style.background = "blue";
 }
@@ -155,14 +185,40 @@ function swordlButtonturnBlue(tool) {
   swordButton.style.background = "blue";
 }
 
+//function that picks random pokemon, later gameboard.addeventlistener will use this function
+// to change the tile the shovel clicks on.
+const pickPokemonobj = [
+  "pokemon-1",
+  "pokemon-2",
+  "pokemon-3",
+  "pokemon-4",
+  "pokemon-5",
+  "pokemon-6",
+  "pokemon-7",
+];
+
+pickPokemon = () => {
+  let pokemon = pickPokemonobj[Math.floor(Math.random() * 7)];
+  return pokemon;
+};
+
 //click on tile and check if the class name of the tile is the same as one of the
 //class list of the tool, if yes than the tile turns to sky, if not, the tool
 //background turns red and than blue.
 gameBoard.addEventListener("click", (e) => {
   switch (myTool) {
     case "axe":
-      if (axeButton.className.includes(e.target.className)) {
-        userchoice1.classList.add(e.target.className);
+      if (
+        axeButton.className.includes(e.target.className) &&
+        e.target.className === "leaves"
+      ) {
+        userchoice1.innerText = +userchoice1.innerText + 1;
+        e.target.classList = "sky";
+      } else if (
+        axeButton.className.includes(e.target.className) &&
+        e.target.className === "tree"
+      ) {
+        userchoice2.innerText = +userchoice2.innerText + 1;
         e.target.classList = "sky";
       } else {
         axeButton.style.background = "red";
@@ -170,8 +226,17 @@ gameBoard.addEventListener("click", (e) => {
       }
       break;
     case "pickaxe":
-      if (pickaxeButton.className.includes(e.target.className)) {
-        userchoice2.classList.add(e.target.className);
+      if (
+        pickaxeButton.className.includes(e.target.className) &&
+        e.target.className === "rock"
+      ) {
+        userchoice3.innerText = +userchoice3.innerText + 1;
+        e.target.classList = "sky";
+      } else if (
+        pickaxeButton.className.includes(e.target.className) &&
+        e.target.className === "redBlock"
+      ) {
+        userchoice6.innerText = +userchoice6.innerText + 1;
         e.target.classList = "sky";
       } else {
         pickaxeButton.style.background = "red";
@@ -181,22 +246,68 @@ gameBoard.addEventListener("click", (e) => {
     case "shovel":
       if (shovelButton.className.includes(e.target.className)) {
         e.target.classList = "";
+        userchoice4.innerText = +userchoice4.innerText + 1;
         e.target.classList = pickPokemon();
-        userchoice3.classList.add(e.target.className);
       } else {
         shovelButton.style.background = "red";
         setTimeout(shovelButtonturnBlue, 500);
       }
       break;
-      break;
     case "sword":
-      if (swordButton.className.includes(e.target.className)) {
-        userchoice4.classList.add(e.target.className);
+      if (
+        swordButton.className.includes(e.target.className) &&
+        e.target.className === "leaves"
+      ) {
+        userchoice1.innerText = +userchoice1.innerText + 1;
+        e.target.classList = "sky";
+      } else if (
+        swordButton.className.includes(e.target.className) &&
+        e.target.className === "tree"
+      ) {
+        userchoice2.innerText = +userchoice2.innerText + 1;
+        e.target.classList = "sky";
+      } else if (
+        swordButton.className.includes(e.target.className) &&
+        e.target.className === "rock"
+      ) {
+        userchoice3.innerText = +userchoice3.innerText + 1;
+        e.target.classList = "sky";
+      } else if (
+        swordButton.className.includes(e.target.className) &&
+        e.target.className === "redBlock"
+      ) {
+        userchoice6.innerText = +userchoice6.innerText + 1;
         e.target.classList = "sky";
       } else {
         swordButton.style.background = "red";
         setTimeout(swordlButtonturnBlue, 500);
       }
       break;
+    case "userchoice1":
+      if (userchoice1.innerText > 0) {
+        userchoice1.innerText = +userchoice1.innerText - 1;
+      }
+    case "userchoice2":
+      if (userchoice2.innerText > 0) {
+        userchoice2.innerText = +userchoice2.innerText - 1;
+      }
+    case "userchoice3":
+      if (userchoice3.innerText > 0) {
+        userchoice3.innerText = +userchoice3.innerText - 1;
+      }
+    case "userchoice4":
+      if (userchoice4.innerText > 0) {
+        userchoice4.innerText = +userchoice4.innerText - 1;
+      }
+    case "userchoice5":
+      if (userchoice5.innerText > 0) {
+        userchoice5.innerText = +userchoice5.innerText - 1;
+      }
+    case "userchoice6":
+      if (userchoice6.innerText > 0) {
+        userchoice6.innerText = +userchoice6.innerText - 1;
+      }
   }
 });
+
+console.log(userchoice12);
