@@ -280,7 +280,7 @@ gameBoard.addEventListener("click", (e) => {
         e.target.classList = "";
         userchoice4.innerText = +userchoice4.innerText + 1;
         e.target.classList = pickPokemon();
-        userchoice7.innerText = "";
+        // userchoice7.innerText = "";
       } else if (
         shovelButton.className.includes(e.target.className) &&
         e.target.className === "grass"
@@ -288,7 +288,7 @@ gameBoard.addEventListener("click", (e) => {
         e.target.classList = "";
         userchoice5.innerText = +userchoice5.innerText + 1;
         e.target.classList = pickPokemon();
-        userchoice7.innerText = "";
+        // userchoice7.innerText = "";
       } else {
         shovelButton.style.background = "red";
         setTimeout(shovelButtonturnBlue, 500);
