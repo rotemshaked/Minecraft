@@ -50,7 +50,6 @@ const materialObj = {
   redBlock: { className: "redBlock", id: 7 },
 };
 
-//create tiles.
 gameBoardMatrix.forEach((row, yIndex) => {
   row.forEach((column, xIndex) => {
     const currentPositionId = gameBoardMatrix[yIndex][xIndex];
@@ -92,14 +91,12 @@ const objTools = {
   sword: { classlist: ["tree", "leaves", "rock", "redBlock"] },
 };
 
-//add classes to tools
 axeButton.classList.add(objTools.axe.classlist);
 pickaxeButton.classList.add(objTools.pickaxe.classlist);
 shovelButton.classList.add(objTools.shovel.classlist);
 swordButton.classList.add(objTools.sword.classlist);
 
 let myTool = "";
-//fuctions that turns the background of the tool to blue when pressed.
 axeButton.addEventListener("click", () => {
   shovelButton.style.background = "";
   pickaxeButton.style.background = "";
@@ -129,6 +126,12 @@ swordButton.addEventListener("click", () => {
   myTool = "sword";
 });
 userchoice1.addEventListener("click", () => {
+  userchoice1Button.style.borderColor = "blue";
+  userchoice2Button.style.borderColor = "";
+  userchoice3Button.style.borderColor = "";
+  userchoice4Button.style.borderColor = "";
+  userchoice5Button.style.borderColor = "";
+  userchoice6Button.style.borderColor = "";
   shovelButton.style.background = "";
   pickaxeButton.style.background = "";
   axeButton.style.background = "";
@@ -136,6 +139,12 @@ userchoice1.addEventListener("click", () => {
   myTool = "userchoice1";
 });
 userchoice2.addEventListener("click", () => {
+  userchoice1Button.style.borderColor = "";
+  userchoice2Button.style.borderColor = "blue";
+  userchoice3Button.style.borderColor = "";
+  userchoice4Button.style.borderColor = "";
+  userchoice5Button.style.borderColor = "";
+  userchoice6Button.style.borderColor = "";
   shovelButton.style.background = "";
   pickaxeButton.style.background = "";
   axeButton.style.background = "";
@@ -143,6 +152,12 @@ userchoice2.addEventListener("click", () => {
   myTool = "userchoice2";
 });
 userchoice3.addEventListener("click", () => {
+  userchoice1Button.style.borderColor = "";
+  userchoice2Button.style.borderColor = "";
+  userchoice3Button.style.borderColor = "blue";
+  userchoice4Button.style.borderColor = "";
+  userchoice5Button.style.borderColor = "";
+  userchoice6Button.style.borderColor = "";
   shovelButton.style.background = "";
   pickaxeButton.style.background = "";
   axeButton.style.background = "";
@@ -150,6 +165,12 @@ userchoice3.addEventListener("click", () => {
   myTool = "userchoice3";
 });
 userchoice4.addEventListener("click", () => {
+  userchoice1Button.style.borderColor = "";
+  userchoice2Button.style.borderColor = "";
+  userchoice3Button.style.borderColor = "";
+  userchoice4Button.style.borderColor = "blue";
+  userchoice5Button.style.borderColor = "";
+  userchoice6Button.style.borderColor = "";
   shovelButton.style.background = "";
   pickaxeButton.style.background = "";
   axeButton.style.background = "";
@@ -157,6 +178,12 @@ userchoice4.addEventListener("click", () => {
   myTool = "userchoice4";
 });
 userchoice5.addEventListener("click", () => {
+  userchoice1Button.style.borderColor = "";
+  userchoice2Button.style.borderColor = "";
+  userchoice3Button.style.borderColor = "";
+  userchoice4Button.style.borderColor = "";
+  userchoice5Button.style.borderColor = "blue";
+  userchoice6Button.style.borderColor = "";
   shovelButton.style.background = "";
   pickaxeButton.style.background = "";
   axeButton.style.background = "";
@@ -164,6 +191,12 @@ userchoice5.addEventListener("click", () => {
   myTool = "userchoice5";
 });
 userchoice6.addEventListener("click", () => {
+  userchoice1Button.style.borderColor = "";
+  userchoice2Button.style.borderColor = "";
+  userchoice3Button.style.borderColor = "";
+  userchoice4Button.style.borderColor = "";
+  userchoice5Button.style.borderColor = "";
+  userchoice6Button.style.borderColor = "blue";
   shovelButton.style.background = "";
   pickaxeButton.style.background = "";
   axeButton.style.background = "";
@@ -171,7 +204,6 @@ userchoice6.addEventListener("click", () => {
   myTool = "userchoice6";
 });
 
-//functions that turn the tool back to blue -  setTimeout function use them inside.
 function axeButtonturnBlue() {
   axeButton.style.background = "blue";
 }
@@ -185,8 +217,6 @@ function swordlButtonturnBlue() {
   swordButton.style.background = "blue";
 }
 
-//function that picks random pokemon, later gameboard.addeventlistener will use this function
-// to change the tile the shovel clicks on.
 const pickPokemonobj = [
   "pokemon-1",
   "pokemon-2",
@@ -202,28 +232,6 @@ pickPokemon = () => {
   return pokemon;
 };
 
-function userchoice1ButtonTurnBlue() {
-  userchoice1Button.style.borderColor = "blue";
-}
-function userchoice2ButtonTurnBlue() {
-  userchoice2Button.style.borderColor = "blue";
-}
-function userchoice3ButtonTurnBlue() {
-  userchoice3Button.style.borderColor = "blue";
-}
-function userchoice4ButtonTurnBlue() {
-  userchoice4Button.style.borderColor = "blue";
-}
-function userchoice5ButtonTurnBlue() {
-  userchoice5Button.style.borderColor = "blue";
-}
-function userchoice6ButtonTurnBlue() {
-  userchoice6Button.style.borderColor = "blue";
-}
-
-//click on tile and check if the class name of the tile is the same as one of the
-//class list of the tool, if yes than the tile turns to sky, if not, the tool
-//background turns red and than blue.
 gameBoard.addEventListener("click", (e) => {
   switch (myTool) {
     case "axe":
@@ -317,41 +325,39 @@ gameBoard.addEventListener("click", (e) => {
       }
       break;
     case "userchoice1":
-      // userchoice1Button.style.borderColor = "blue";
       if (userchoice1.innerText > 0) {
         userchoice1.innerText = +userchoice1.innerText - 1;
         e.target.className = "leaves";
-        break;
       }
+      break;
     case "userchoice2":
       if (userchoice2.innerText > 0) {
         userchoice2.innerText = +userchoice2.innerText - 1;
         e.target.className = "tree";
-        break;
       }
+      break;
     case "userchoice3":
       if (userchoice3.innerText > 0) {
         userchoice3.innerText = +userchoice3.innerText - 1;
-        break;
       }
+      break;
     case "userchoice4":
       if (userchoice4.innerText > 0) {
         userchoice4.innerText = +userchoice4.innerText - 1;
         e.target.className = "rock";
-        break;
       }
+      break;
     case "userchoice5":
       if (userchoice5.innerText > 0) {
         userchoice5.innerText = +userchoice5.innerText - 1;
         e.target.className = "ground";
-        break;
       }
+      break;
     case "userchoice6":
       if (userchoice6.innerText > 0) {
         userchoice6.innerText = +userchoice6.innerText - 1;
         e.target.className = "grass";
-        break;
       }
+      break;
   }
 });
-console.log(userchoice1Button.classname);
