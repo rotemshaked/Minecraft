@@ -162,3 +162,15 @@ button p {
   color: black;
   font-size: 12px;
 }
+
+.reload {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.reload p {
+  border: brown 2px dotted;
+  font-size: 13px;
+  color: brown;
+}

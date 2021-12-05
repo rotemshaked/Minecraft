@@ -10,6 +10,7 @@ const userchoice3 = document.querySelector(".userchoice3 p");
 const userchoice4 = document.querySelector(".userchoice4 p");
 const userchoice5 = document.querySelector(".userchoice5 p");
 const userchoice6 = document.querySelector(".userchoice6 p");
+const userchoice7 = document.querySelector(".userchoice7 p");
 const userchoice1Button = document.querySelector(".userchoice1");
 const userchoice2Button = document.querySelector(".userchoice2");
 const userchoice3Button = document.querySelector(".userchoice3");
@@ -17,6 +18,7 @@ const userchoice4Button = document.querySelector(".userchoice4");
 const userchoice5Button = document.querySelector(".userchoice5");
 const userchoice6Button = document.querySelector(".userchoice6");
 const userchoice7Button = document.querySelector(".userchoice7");
+const reload = document.querySelector(".reload");
 
 const gameBoardMatrix = [
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -278,9 +280,7 @@ gameBoard.addEventListener("click", (e) => {
         e.target.classList = "";
         userchoice4.innerText = +userchoice4.innerText + 1;
         e.target.classList = pickPokemon();
-        console.dir(e.target.classList);
-        console.dir(userchoice7Button.classlist);
-        userchoice7Button.classlist.add(e.target.classList);
+        userchoice7.innerText = "";
       } else if (
         shovelButton.className.includes(e.target.className) &&
         e.target.className === "grass"
@@ -288,8 +288,7 @@ gameBoard.addEventListener("click", (e) => {
         e.target.classList = "";
         userchoice5.innerText = +userchoice5.innerText + 1;
         e.target.classList = pickPokemon();
-        userchoice7Button.classlist = e.target.classlist;
-        console.log(userchoice7Button.classlist);
+        userchoice7.innerText = "";
       } else {
         shovelButton.style.background = "red";
         setTimeout(shovelButtonturnBlue, 500);
@@ -361,4 +360,11 @@ gameBoard.addEventListener("click", (e) => {
       }
       break;
   }
+});
+
+// userchoice7Button.classList = pickPokemon();
+// console.log(userchoice7Button.classList);
+
+reload.addEventListener("click", () => {
+  location.reload();
 });
