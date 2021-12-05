@@ -278,8 +278,9 @@ gameBoard.addEventListener("click", (e) => {
         e.target.classList = "";
         userchoice4.innerText = +userchoice4.innerText + 1;
         e.target.classList = pickPokemon();
-        userchoice7Button.classlist = e.target.classlist;
-        console.log(userchoice7Button.classlist);
+        console.dir(e.target.classList);
+        console.dir(userchoice7Button.classlist);
+        userchoice7Button.classlist.add(e.target.classList);
       } else if (
         shovelButton.className.includes(e.target.className) &&
         e.target.className === "grass"
