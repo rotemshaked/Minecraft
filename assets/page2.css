@@ -4,8 +4,6 @@
   box-sizing: border-box;
 }
 
-@import url("http://fonts.cdnfonts.com/css/minecraft-4");
-
 body {
   display: flex;
   justify-content: center;
@@ -53,7 +51,9 @@ button {
 }
 
 button p {
-  font-family: "Minecraft", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
   color: black;
 }
 .tree {
@@ -140,13 +140,16 @@ button p {
 .userchoice5,
 .userchoice6,
 .userchoice7 {
-  font-family: "Minecraft", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
   width: 60px;
   height: 60px;
   border: 2px black solid;
   cursor: pointer;
   margin: 2%;
   color: blanchedalmond;
+  position: flex;
 }
 
 .userchoice1 p,
@@ -155,7 +158,10 @@ button p {
 .userchoice4 p,
 .userchoice5 p,
 .userchoice6 p {
-  color: blanchedalmond;
+  color: rgb(241, 220, 187);
+  width: 60px;
+  height: 60px;
+  position: flex;
 }
 .userchoice7 {
   background-image: url("");
@@ -166,12 +172,17 @@ button p {
 }
 
 .userchoice7 p {
-  font-family: "Minecraft", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   color: black;
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  width: 60px;
+  height: 60px;
 }
 
 .reload {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
   width: 60px;
   height: 60px;
   cursor: pointer;
@@ -179,6 +190,6 @@ button p {
 
 .reload p {
   border: brown 2px dotted;
-  font-size: 13px;
+  font-size: 12px;
   color: brown;
 }

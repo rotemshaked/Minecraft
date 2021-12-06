@@ -92,13 +92,13 @@ const objTools = {
   shovel: { classlist: ["ground", "grass"] },
   sword: { classlist: ["tree", "leaves", "rock", "redBlock"] },
 };
-
 axeButton.classList.add(objTools.axe.classlist);
 pickaxeButton.classList.add(objTools.pickaxe.classlist);
 shovelButton.classList.add(objTools.shovel.classlist);
 swordButton.classList.add(objTools.sword.classlist);
 
 let myTool = "";
+
 axeButton.addEventListener("click", () => {
   shovelButton.style.background = "";
   pickaxeButton.style.background = "";
@@ -242,7 +242,7 @@ gameBoard.addEventListener("click", (e) => {
         e.target.className === "leaves"
       ) {
         userchoice1.innerText = +userchoice1.innerText + 1;
-        e.target.classList = "sky";
+        e.target.className = "sky";
       } else if (
         axeButton.className.includes(e.target.className) &&
         e.target.className === "tree"
@@ -280,7 +280,9 @@ gameBoard.addEventListener("click", (e) => {
         e.target.classList = "";
         userchoice4.innerText = +userchoice4.innerText + 1;
         e.target.classList = pickPokemon();
-        // userchoice7.innerText = "";
+        userchoice7.innerText = "";
+        userchoice7.classList = e.target.className;
+        console.log(userchoice6.className);
       } else if (
         shovelButton.className.includes(e.target.className) &&
         e.target.className === "grass"
@@ -288,7 +290,8 @@ gameBoard.addEventListener("click", (e) => {
         e.target.classList = "";
         userchoice5.innerText = +userchoice5.innerText + 1;
         e.target.classList = pickPokemon();
-        // userchoice7.innerText = "";
+        userchoice7.innerText = "";
+        userchoice7.classList = e.target.className;
       } else {
         shovelButton.style.background = "red";
         setTimeout(shovelButtonturnBlue, 500);
@@ -325,37 +328,38 @@ gameBoard.addEventListener("click", (e) => {
       }
       break;
     case "userchoice1":
-      if (userchoice1.innerText > 0) {
+      if (userchoice1.innerText > 0 && e.target.className === "sky") {
         userchoice1.innerText = +userchoice1.innerText - 1;
         e.target.className = "leaves";
+      } else {
       }
       break;
     case "userchoice2":
-      if (userchoice2.innerText > 0) {
+      if (userchoice2.innerText > 0 && e.target.className === "sky") {
         userchoice2.innerText = +userchoice2.innerText - 1;
         e.target.className = "tree";
       }
       break;
     case "userchoice3":
-      if (userchoice3.innerText > 0) {
+      if (userchoice3.innerText > 0 && e.target.className === "sky") {
         userchoice3.innerText = +userchoice3.innerText - 1;
         e.target.className = "rock";
       }
       break;
     case "userchoice4":
-      if (userchoice4.innerText > 0) {
+      if (userchoice4.innerText > 0 && e.target.className === "sky") {
         userchoice4.innerText = +userchoice4.innerText - 1;
         e.target.className = "ground";
       }
       break;
     case "userchoice5":
-      if (userchoice5.innerText > 0) {
+      if (userchoice5.innerText > 0 && e.target.className === "sky") {
         userchoice5.innerText = +userchoice5.innerText - 1;
         e.target.className = "grass";
       }
       break;
     case "userchoice6":
-      if (userchoice6.innerText > 0) {
+      if (userchoice6.innerText > 0 && e.target.className === "sky") {
         userchoice6.innerText = +userchoice6.innerText - 1;
         e.target.className = "redBlock";
       }
