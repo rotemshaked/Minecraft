@@ -44,3 +44,12 @@ button:hover {
   line-height: 1.5rem;
   font-size: 18px;
 }
+
+@media screen and (max-width: 600px) {
+button {
+  margin-top: 35vh;
+}
+.explanation {
+  margin-top: 45vh;
+}
+}
