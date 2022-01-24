@@ -210,20 +210,7 @@ body {
   margin-left: 90vw;
 }
 button {
-  width: 60px;
-  height: 15%;
-  cursor: pointer;
-  border: none;
-  background-color: blanchedalmond;
-}
-
-.swordButton,
-.shovelButton,
-.pickaxeButton,
-.axeButton {
-  width: 60px;
-  height: 60px;
-  border: 2px black dotted;
+  width: 50px;
 }
 
 button p {
