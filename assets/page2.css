@@ -189,7 +189,9 @@ button p {
 }
 
 .reload p {
-display: none;
+  border: brown 2px dotted;
+  font-size: 12px;
+  color: brown;
 }
 
 @media screen and (max-width: 600px) {
@@ -221,8 +223,8 @@ body {
 .userchoice6,
 .userchoice7 {
   font-size: 12px;
-  width: 50px;
-  height: 50px;  
+  width: 40px;
+  height: 40px;  
   margin-left: 1.15%;
 
 }
@@ -237,16 +239,9 @@ body {
 .userchoice7 p {
   font-size: 11px;
 }
-
-.reload {
-  width: 50px;
-  height: 50px;
-}
-
 .reload p {
-  border: brown 2px dotted;
-  font-size: 12px;
-  color: brown;
+display: none;
 }
+
 }
 
