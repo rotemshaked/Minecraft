@@ -194,37 +194,18 @@ button p {
   color: brown;
 }
 @media screen and (max-width: 600px) {
-body {
-  display: flex;
-  justify-content: center;
-  background-color: white;
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-}
-
 .game-board {
-  margin-top: 15vh;
-  width: 70vw;
-  height: 85vh;
-  display: grid;
-  grid-template-columns: repeat(18, 1fr);
-  grid-template-rows: repeat(18, 1fr);
-  position: absolute;
+  width: 80vw;
 }
 
 .toolBox {
-  margin-top: 15vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 7vw;
-  height: 85vh;
-  background-color: blanchedalmond;
-  position: absolute;
-  margin-left: 80vw;
+  margin-left: 90vw;
 }
+  
+  
+  
+  
+  
 button {
   width: 60px;
   height: 15%;
