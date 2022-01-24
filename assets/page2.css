@@ -232,74 +232,9 @@ button p {
   font-size: 12px;
   color: black;
 }
-.tree {
-  background: url("/assets/pictures/big/treeBrown.jpeg");
-}
-
-.leaves {
-  background: url("/assets/pictures/big/treeGreen.jpeg");
-}
-
-.rock {
-  background: url("/assets/pictures/big/brick.jpeg");
-}
-
-.ground {
-  background: url("/assets/pictures/big/ground.jpeg");
-}
-
-.cloud {
-  background-color: rgb(255, 255, 255);
-}
-.sky {
-  background-color: rgb(21, 147, 215);
-}
-.grass {
-  background: url("/assets/pictures/big/grassWithGround.jpeg");
-}
-.redBlock {
-  background: url("/assets/pictures/big/Red-Brick-Block-300x300.png");
-}
-
-.pokemon-1 {
-  background: url("/assets/pictures/pokemon-1.jpg");
-  background-size: cover;
-  background-position: center;
-}
-.pokemon-2 {
-  background: url("/assets/pictures/pokemon-2.jpg");
-  background-size: cover;
-  background-position: center;
-}
-.pokemon-3 {
-  background: url("/assets/pictures/pokemon-3.png");
-  background-size: cover;
-  background-position: center;
-}
-.pokemon-4 {
-  background: url("/assets/pictures/pokemon-4.jpg");
-  background-size: cover;
-  background-position: center;
-}
-.pokemon-5 {
-  background: url("/assets/pictures/pokemon-5.jfif");
-  background-size: cover;
-  background-position: center;
-}
-.pokemon-6 {
-  background: url("/assets/pictures/pokemon-6.png");
-  background-size: cover;
-  background-position: center;
-}
-
-.pokemon-7 {
-  background: url("/assets/pictures/pokemon-7.jpg");
-  background-size: cover;
-  background-position: center;
-}
 
 .toolsUserChoose {
-  width: 78.5vw;
+  width: 90vw;
   height: 13vh;
   margin-left: 8.5vw;
   background-color: blanchedalmond;
