@@ -147,7 +147,7 @@ button p {
   height: 60px;
   border: 2px black solid;
   cursor: pointer;
-  margin: 2px;
+  margin: 2%;
   color: blanchedalmond;
   position: flex;
 }
