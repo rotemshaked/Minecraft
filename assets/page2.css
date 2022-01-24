@@ -206,8 +206,8 @@ body {
 }
 
 .toolBox {
-  width: 10vw;
-  margin-left: 80vw;
+  width: auto;
+  margin-left: 90vw;
 }
 button {
   width: 60px;
