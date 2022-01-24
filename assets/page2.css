@@ -195,7 +195,7 @@ button p {
 }
 @media screen and (max-width: 600px) {
 .game-board {
-  width: 80vw;
+  width: 90vw;
 }
 
 .toolBox {
