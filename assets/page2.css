@@ -202,12 +202,14 @@ button p {
 }
 
 .toolBox {
-  width: auto;
-  margin-left: 90vw;
+  width: 60px;
+  margin-left: 85vw;
+  margin-top: 20vh;
 }
    
  .game-board {
    width: 85vw;
+   margin-top: 20vh;
 }
 
 button {
