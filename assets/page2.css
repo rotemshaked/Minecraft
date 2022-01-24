@@ -203,12 +203,10 @@ body {
 
 .game-board {
   width: 70vmin;
-  height: 85vh;
 }
 
 .toolBox {
   width: 10vw;
-  height: 85vmin;
   margin-left: 80vw;
 }
 button {
