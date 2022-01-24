@@ -203,13 +203,11 @@ button p {
 
 .toolBox {
   width: 60px;
-  margin-left: 85vw;
-  margin-top: 20vh;
+  margin-left: 80vw;
 }
    
  .game-board {
-   width: 85vw;
-   margin-top: 20vh;
+   width: 100vw;
 }
 
 button {
