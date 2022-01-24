@@ -235,13 +235,8 @@ button p {
 
 .toolsUserChoose {
   width:100vw;
-  height: 13vh;
-  margin-left: 8.5vw;
-  background-color: blanchedalmond;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-left: 0;
+
 }
 
 .userchoice1,
