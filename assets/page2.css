@@ -193,6 +193,7 @@ button p {
   font-size: 12px;
   color: brown;
 }
+
 @media screen and (max-width: 600px) {
 
 .body{
@@ -202,10 +203,13 @@ button p {
 
 .toolBox {
   width: auto;
-  margin-left: 85vw;
+  margin-left: 90vw;
 }
    
-  
+ .game-board {
+   width: 85vw;
+}
+
 button {
   width: 40px;
   height: 10%;
