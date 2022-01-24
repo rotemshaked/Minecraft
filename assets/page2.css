@@ -194,14 +194,29 @@ button p {
   color: brown;
 }
 @media screen and (max-width: 600px) {
+
 .game-board {
-  width: 90vw;
+  margin-top: 15vh;
+  width: 70vw;
+  height: 85vh;
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  grid-template-rows: repeat(18, 1fr);
+  position: absolute;
 }
 
 .toolBox {
-  margin-left: 90vw;
+  margin-top: 15vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 85vh;
+  background-color: blanchedalmond;
+  position: absolute;
+  margin-left: 85vw;
 }
-  
   
   
   
