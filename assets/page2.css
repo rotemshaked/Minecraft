@@ -193,3 +193,198 @@ button p {
   font-size: 12px;
   color: brown;
 }
+@media screen and (max-width: 600px) {
+body {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.game-board {
+  margin-top: 15vh;
+  width: 70vw;
+  height: 85vh;
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  grid-template-rows: repeat(18, 1fr);
+  position: absolute;
+}
+
+.toolBox {
+  margin-top: 15vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 7vw;
+  height: 85vh;
+  background-color: blanchedalmond;
+  position: absolute;
+  margin-left: 80vw;
+}
+button {
+  width: 60px;
+  height: 15%;
+  cursor: pointer;
+  border: none;
+  background-color: blanchedalmond;
+}
+
+.swordButton,
+.shovelButton,
+.pickaxeButton,
+.axeButton {
+  width: 60px;
+  height: 60px;
+  border: 2px black dotted;
+}
+
+button p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  color: black;
+}
+.tree {
+  background: url("/assets/pictures/big/treeBrown.jpeg");
+}
+
+.leaves {
+  background: url("/assets/pictures/big/treeGreen.jpeg");
+}
+
+.rock {
+  background: url("/assets/pictures/big/brick.jpeg");
+}
+
+.ground {
+  background: url("/assets/pictures/big/ground.jpeg");
+}
+
+.cloud {
+  background-color: rgb(255, 255, 255);
+}
+.sky {
+  background-color: rgb(21, 147, 215);
+}
+.grass {
+  background: url("/assets/pictures/big/grassWithGround.jpeg");
+}
+.redBlock {
+  background: url("/assets/pictures/big/Red-Brick-Block-300x300.png");
+}
+
+.pokemon-1 {
+  background: url("/assets/pictures/pokemon-1.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.pokemon-2 {
+  background: url("/assets/pictures/pokemon-2.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.pokemon-3 {
+  background: url("/assets/pictures/pokemon-3.png");
+  background-size: cover;
+  background-position: center;
+}
+.pokemon-4 {
+  background: url("/assets/pictures/pokemon-4.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.pokemon-5 {
+  background: url("/assets/pictures/pokemon-5.jfif");
+  background-size: cover;
+  background-position: center;
+}
+.pokemon-6 {
+  background: url("/assets/pictures/pokemon-6.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.pokemon-7 {
+  background: url("/assets/pictures/pokemon-7.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.toolsUserChoose {
+  width: 78.5vw;
+  height: 13vh;
+  margin-left: 8.5vw;
+  background-color: blanchedalmond;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userchoice1,
+.userchoice2,
+.userchoice3,
+.userchoice4,
+.userchoice5,
+.userchoice6,
+.userchoice7 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  width: 60px;
+  height: 60px;
+  border: 2px black solid;
+  cursor: pointer;
+  margin: 2%;
+  color: blanchedalmond;
+  position: flex;
+}
+
+.userchoice1 p,
+.userchoice2 p,
+.userchoice3 p,
+.userchoice4 p,
+.userchoice5 p,
+.userchoice6 p {
+  color: rgb(241, 220, 187);
+  width: 60px;
+  height: 60px;
+  position: flex;
+}
+.userchoice7 {
+  background-image: url("");
+  width: 60px;
+  height: 60px;
+  background-size: cover;
+  background-position: center;
+}
+
+.userchoice7 p {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  font-size: 14px;
+  font-weight: 700;
+  width: 60px;
+  height: 60px;
+}
+
+.reload {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.reload p {
+  border: brown 2px dotted;
+  font-size: 12px;
+  color: brown;
+}
+  
+  
+}
