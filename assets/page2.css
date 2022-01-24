@@ -203,11 +203,11 @@ button p {
 
 .toolBox {
   width: 60px;
-  margin-left: 80vw;
+  margin-left: 90vw;
 }
    
  .game-board {
-   width: 100vw;
+   width: 80vw;
 }
 
 button {
@@ -290,21 +290,5 @@ button p {
   font-weight: 700;
   width: 60px;
   height: 60px;
-}
-
-.reload {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 700;
-  width: 60px;
-  height: 60px;
-  cursor: pointer;
-}
-
-.reload p {
-  border: brown 2px dotted;
-  font-size: 12px;
-  color: brown;
-}
-  
-  
+}  
 }
