@@ -207,8 +207,56 @@ body {
 
 .toolBox {
   width: auto;
-  margin-left:80%;
+  margin-left:55%;
+}
 
+.toolsUserChoose {
+  width:auto;
+  margin-left: 5%;
+}
+
+.userchoice1,
+.userchoice2,
+.userchoice3,
+.userchoice4,
+.userchoice5,
+.userchoice6,
+.userchoice7 {
+  font-size: 12px;
+  width: 47px;
+  height: 45px;  
+  margin-left: 0.5px;
+}
+
+.userchoice7 {
+  width: 55px;
+  height: 62px;
+  display: flex;
+  justify-content: center;
+}
+
+.userchoice7 p {
+  font-size: 11px;
+}
+.reload p {
+display: none;
+}
+
+}
+
+@media screen and (max-width: 450px) {
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+.game-board {
+  width: 90vmin;
+}
+
+.toolBox {
+  width: auto;
+  margin-left:80%;
 }
 
 .toolsUserChoose {
