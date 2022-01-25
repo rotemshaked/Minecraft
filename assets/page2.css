@@ -194,7 +194,7 @@ button p {
   color: brown;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
 
 body {
   width: 100vw;
